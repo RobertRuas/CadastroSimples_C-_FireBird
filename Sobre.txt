@@ -1,0 +1,94 @@
+Cadastro Simples de Clientes
+C#, FireBird 3.0
+
+Este projeto foi desenvolvido meramente para servir como modelo para outros projetos de maior escala, com fins didaticos e/ou referência.
+
+
+http://www.devmedia.com.br/desenvolvimento-em-3-camadas-conceitos/22277
+Desenvolvimento em 3 camadas (Conceitos)
+
+Design patterns ou padrões de projetos são, nada mais nada menos, que um modo de 
+desenvolvimento. Segue-se determinadas regras do padrão adotado para solução de 
+determinado problema, normalmente inerente à programação orientada à objetos.
+
+Existe muita coisa entre o desenvolvimento de alto nível e o copy & paste do que a vã filosofia de um sobrinho é capaz de entender.
+
+Dentre essas coisas estão os padrões de projetos (design patterns) e à partir deste post falarei um pouquinho sobre eles.
+
+Nesta primeira parte explicarei um pouco do conceito sobre o desenvolvimento em 3 camadas e na segunda parte farei um exemplo de implementação em php.
+
+Design Patterns? Isso morde?
+
+Design patterns ou padrões de projetos são, nada mais nada menos, que um modo de desenvolvimento. Segue-se determinadas regras do padrão adotado para solução de determinado problema, normalmente inerente à programação orientada à objetos.
+É muito utilizado devido o grau de abstração que se consegue através destas práticas, tornando o código muito mais legível e de fácil manutenção e crescimento.
+
+MVC – Model, View, Controller
+
+MVC não foi criado para ser somente um padrão de projeto, ele na verdade é uma arquitetura de projeto onde seu objetivo é separar seu código em três camadas fazendo com que cada área só trabalhe com itens que competem à elas. Trocando em miúdos, cada um só faz o que foi desenvolvido para fazer.
+Com o MVC você facilmente transforma seu código de modo à ficar muito mais legível.
+Para utilizá-lo você tem que ter em mente que haverá uma separação em seu código, as regras de negócio ficarão separadas da lógica e da interface do usuário.
+
+M de Model
+
+O model, ou modelo, no padrão MVC serve para armazenar e persistir os dados. O que seria isso? Toda comunicação com o banco de dados. Os comandos crud (inserir, alterar, remover, buscar) serão feitas pelas classes deste tipo.
+É utilizado para armazenar informações,trabalhando como um espelho da tabela do banco de dados. Como trabalhamos com objetos, os dados serão persistidos como objetos.
+
+V de View
+
+O view, ou visão, no padrão MVC servirá APENAS para exibir as informações enviadas pelo controller, aqui não existirá nenhuma lógica ou regra de negócio, apenas a interface do usuário.
+
+C de Controller
+
+O controle faz exatamente o que o nome diz: controla. Ele é o responsável por fazer o intermédio entre o modelo e a visão.
+É o responsável também por toda lógica do sistema. Retornando somente os itens necessários para a comunicação entre o modelo e a visão. Entre o usuário e a aplicação.
+
+
+
+
+
+
+
+
+
+Foir utilizado um conceito de programação em 3 camadas:
+
+  > Modelo (Modelo de dados a serem manipulados, com seus devidos atributos padronizados)
+  > Dados (Intermediario de comunicação com o banco de dados)
+  > Negocio (Intermediario de comando entre interface de usuaio e camada de dados)
+  
+  > Apresentação (Interface de Usuario)
+  
+  >> Modelo:
+     -> Exemplo:
+     
+        Cliente {
+          int ID;
+          string Nome;
+          string Email;
+          string Sexo
+        }
+        
+  >> Dados
+      Nesta camada, contem dois metodos principais que execultam um comando SQL ou Stored 
+      Precedure, dentre outros metodos.
+      
+      Esta se comunica diretamente com a base de dados, evitando a disperção de codigos que 
+      exigem concexão direta com a base de dados, assim tornando o projeto de facil manutençaõ.
+      
+      Caso seja utilizado stored procedure, os parâmetros será passado atravez de um metodo
+      contido nessa camada (class)
+      
+  >> Negocio
+      A camada de negocio terá como principal função, intermediar os comando de execução de
+      rotinas e procedimentos em todo o projeto, reduzindo a disperção de codigo.
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
